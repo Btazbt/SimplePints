@@ -1,0 +1,16 @@
+ShowTapNumCol,1,true/false
+ShowSrmCol,1,true/false
+ShowIbuCol,1,true/false
+ShowCalCol,1,true/false
+ShowAbvCol,1,true/false
+ShowAbvImg,0,true/false
+ShowKegCol,0,"false, not used"
+UseHighResolution,0,"false, not used"
+LogoUrl,logo.png,
+HeaderText,On Tap @ BT Beer Projects,
+HeaderTextTruncLen,1,
+NumberOfTaps,4,
+UseFlowMeter,0,"false, not used"
+HeaderBacklinkText,1,
+WebsiteUrl,https://BT.BeerProjects.com/worpress,
+beersurl,beers.csv,
