@@ -1,4 +1,4 @@
-SimplePints is a digital taplist, created just for the home brewer. Display your current beers on tap with a sleek, digital presentation. No hard setup and easy to update.
+SimplePints is a digital taplist, created just for the home brewer. Display your current beers on tap with a sleek, digital presentation. No hard setup and easy to update. Requires PHP.
 
 
 __Licensing:__
