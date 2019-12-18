@@ -1,5 +1,5 @@
 ID,OnTapNumber,BeerName,Style,Notes,OG,FG,SRM,IBU
 Beer1,3,Draco,Porter,Beer #42a,1.06,1.02,40,35
-Beer2,1,Happy Place,Pale Ale,Beer #41b,1.054,1.017,6,50
+Beer2,4,Happy Place,Pale Ale,Beer #41b,1.054,1.017,6,50
 Beer3,2,Draco's Breath,Porter,Beer #42b added smoked malt,1.06,1.02,40,35
-Beer4,4,Game Day (Rematch),Marzen,Beer #40,1.058,1.015,9,20
+Beer4,1,Game Day (Rematch),Marzen,Beer #40,1.058,1.015,9,20

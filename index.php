@@ -22,6 +22,7 @@
 	$HeaderBacklinkText = 13;
 	$WebsiteUrl = 14;
 	$beersFile= 15;
+	$sytleSheet = 16;
 
 
 	//require_once __DIR__.'/includes/config.php';
@@ -142,11 +143,11 @@
 
 <html>
 	<head>
-		<title>SimplePints</title>
+		<title>Simple Pints</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
 		<!-- Set location of Cascading Style Sheet -->
-		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="stylesheet" type="text/css" href="<?php echo $config[$sytleSheet] ?>">
 		
 		<?php if($config[$UseHighResolution]) { ?>
 			<link rel="stylesheet" type="text/css" href="high-res.css">
