@@ -19,10 +19,11 @@
 	$HeaderTextTruncLen = 10;
 	$NumberOfTaps =11;
 	$UseFlowMeter = 12;
-	$HeaderBacklinkText = 13;
-	$WebsiteUrl = 14;
-	$beersFile= 15;
-	$sytleSheet = 16;
+	$UseColorsXML = 13;
+	$HeaderBacklinkText = 14;
+	$WebsiteUrl = 15;
+	$beersFile= 16;
+	$sytleSheet = 17;
 
 
 	//require_once __DIR__.'/includes/config.php';
@@ -80,9 +81,32 @@
 	}
 	fclose($handle);
 
-//$tapManager = new TapManager();
-//$numberOfTaps = $tapManager->GetonTapNumber();
-	
+
+	if($config[$UseColorsXML]) {
+		//Read Colors.xml
+		$SRMlookup = array();
+		// xml file path 
+		$path = "colors.xml"; 
+		// Read entire file into string 
+		$xmlfile = file_get_contents($path); 
+		// Convert xml string into an object 
+		$new = simplexml_load_string($xmlfile); 
+		// Convert into json 
+		$con = json_encode($new); 
+		// Convert into associative array 
+		$newArr  = json_decode($con, true); 
+		//print_r($newArr); 
+		// Array ( [COLOR] => Array ( [0] => Array ( [SRM] => 0.1 [RGB] => 248,248,230 ) [1] => Array ( [SRM] => 0.2 [RGB] => 248,248,220 ) [2] => Array ( [SRM] => 0.3 [RGB] => 247,247,199 ) [3] => Array ( [SRM] => 0.4 [RGB] => 244,249,185 ) [4] => Array ( [SRM] => 0.5 [RGB] => 247,249,180 ) [5] => Array ( [SRM] => 0.6 [RGB] => 248,249,178 ) [6] => Array ( [SRM] => 0.7 [RGB] => 244,246,169 ) [7] => Array ( [SRM] => 0.8 [RGB] => 245,247,166 ) 
+		foreach ($newArr [COLOR] as $value){
+		 //echo $value["SRM"];
+		 $SRMlookup[$value["SRM"]] = $value["RGB"] ;
+		 //echo "SRM: ".$value["SRM"]."    RGB:  ".$SRMlookup[$value["SRM"]]." \n";
+		 
+		}
+		//print_r($SRMlookup);
+	}
+
+
 	//function modified from  http://brew-engine.com/js/beer_color_calculator.js
 	function srmToRGB(int $srm) {
 		// Returns an RGB value based on SRM
@@ -251,12 +275,16 @@
 									<td class="srm">
 										<h3><?php echo $beer['og']; ?> OG</h3>
 										<h3><?php echo $beer['fg']; ?> FG</h3>
+                                        <!--- <h3><?php echo $beer['srm']. " RGB:".$SRMlookup[$beer['srm']]; ?> FG</h3>  --->
 										<div class="srm-container">
 											<div class="srm-indicator" style="background-color: rgb(<?php 
 											//echo $beer['srmRgb'] != "" ? $beer['srmRgb'] : "0,0,0" 
-                                            
-											
-												echo srmToRGB($beer['srm']);
+                                           if($config[$UseColorsXML]) { 
+											  echo $SRMlookup[$beer['srm']];
+										   }
+										   else { 
+										   	echo srmToRGB($beer['srm']);
+										   }
 													?>)"></div>
 											<div class="srm-stroke"></div> 
 										</div>
