@@ -1,0 +1,5 @@
+ID,OnTapNumber,BeerName,Style,Notes,OG,FG,SRM,IBU,Label
+Beer1,3,Good Beer,IPA,awww,1.06,1.02,3,60,
+Beer2,4,Great Beer,Americal Sour,YES!!!,1.054,1.017,4,3,
+Beer3,2,Better Beer,Pale Ale,mmm,1.06,1.02,6,35,
+Beer4,1,Beer,Light Lager,heh,1.058,1.015,1,15,

@@ -3,7 +3,7 @@
 	global $link;	
 	//require_once __DIR__.'/includes/config_names.php';
 
-
+	$usrPath = "usr/";
 	$configFile= "configs.csv";
 	// Column order of config file
 	$ShowTapNumCol = 0;
@@ -36,7 +36,7 @@
 	$beers = array();
 	
 	// read in config file info into arrays
-	$handle = fopen($configFile, "r");
+	$handle = fopen($usrPath.$configFile, "r");
 	$configPos = 0;
 	while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
 			$config[$configPos] = $data[1];
@@ -58,7 +58,7 @@
 	// writes csv info into arrays		
    //$beersurl = "beers.csv";
 	//$handle = fopen($beersurl, "r");		
-	$handle = fopen($config[$beersFile], "r");
+	$handle = fopen($usrPath. $config[$beersFile], "r");
 	while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
 			
 			$beeritem = array(
@@ -71,6 +71,7 @@
 				"fg" => $data[6],
 				"srm" => $data[7],
 				"ibu" => $data[8],
+				"label" => $data[9],
 				//"startAmount" => $data[8],
 				//"amountPoured" => $data[9],
 				//"remainAmount" => $data[10],
@@ -186,10 +187,10 @@
 			<div class="header clearfix">
 				<div class="HeaderLeft">
 					<?php if($config[$UseHighResolution]) { ?>			
-					  <a href="<?php echo $config[$WebsiteUrl] ?>"><img src="img/<?php echo $config[$LogoUrl] . "?" . time(); ?>" height="200" alt=""></a>
+					  <a href="<?php echo $config[$WebsiteUrl] ?>"><img src="<?php echo $usrPath . $config[$LogoUrl] . "?" . time(); ?>" height="200" alt=""></a>
 					  <?php } else { ?>
                       <!-- http://bt.beerprojects.com/wordpress/ -->
-					  <a href="<?php echo $config[$WebsiteUrl];?>"><img src="img/<?php echo $config[$LogoUrl] . "?" . time(); ?>" height="100" alt=""></a>
+					  <a href="<?php echo $config[$WebsiteUrl];?>"><img src="<?php echo $usrPath . $config[$LogoUrl] . "?" . time(); ?>" height="100" alt=""></a>
 					  <?php } ?>
                 </div>
 				<div class="HeaderCenter">
@@ -268,6 +269,7 @@
 								<?php if($config[$ShowTapNumCol]){ ?>
 									<td class="tap-num">
 										<span class="tapcircle"><?php echo $i; ?></span>
+                                        <img src="<?php echo $usrPath.$beer['label']; ?>" height="200" alt="Beerl Label">
 									</td>
 								<?php } ?>
 							
