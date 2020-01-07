@@ -7,23 +7,24 @@
 	$configFile= "configs.csv";
 	// Column order of config file
 	$ShowTapNumCol = 0;
-	$ShowSrmCol = 1;
-	$ShowIbuCol = 2;
-	$ShowCalCol = 3;
-	$ShowAbvCol = 4;
-	$ShowAbvImg = 5;
-	$ShowKegCol = 6;
-	$UseHighResolution = 7;
-	$LogoUrl = 8;
-	$HeaderText = 9;
-	$HeaderTextTruncLen = 10;
-	$NumberOfTaps =11;
-	$UseFlowMeter = 12;
-	$UseColorsXML = 13;
-	$HeaderBacklinkText = 14;
-	$WebsiteUrl = 15;
-	$beersFile= 16;
-	$sytleSheet = 17;
+	$ShowBeerLabel = 1;
+	$ShowSrmCol = 2;
+	$ShowIbuCol = 3;
+	$ShowCalCol = 4;
+	$ShowAbvCol = 5;
+	$ShowAbvImg = 6;
+	$ShowKegCol = 7;
+	$UseHighResolution = 8;
+	$LogoUrl = 9;
+	$HeaderText = 10;
+	$HeaderTextTruncLen = 11;
+	$NumberOfTaps =12;
+	$UseFlowMeter = 13;
+	$UseColorsXML = 14;
+	$HeaderBacklinkText = 15;
+	$WebsiteUrl = 16;
+	$beersFile= 17;
+	$sytleSheet = 18;
 
 
 	//require_once __DIR__.'/includes/config.php';
@@ -269,7 +270,11 @@
 								<?php if($config[$ShowTapNumCol]){ ?>
 									<td class="tap-num">
 										<span class="tapcircle"><?php echo $i; ?></span>
-                                        <img src="<?php echo $usrPath.$beer['label']; ?>" height="200" alt="Beerl Label">
+                                        <?php if($config[$ShowBeerLabel]){ 
+                                        	echo '<img src="';
+											echo $usrPath.$beer['label']; 
+											echo '" height="200" alt="Beerl Label">';
+										}?>
 									</td>
 								<?php } ?>
 							

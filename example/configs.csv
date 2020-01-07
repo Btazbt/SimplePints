@@ -1,13 +1,13 @@
 ShowTapNumCol,1,true/false
+ShowBeerLabel,1,true/false
 ShowSrmCol,1,true/false
 ShowIbuCol,1,true/false
 ShowCalCol,1,true/false
 ShowAbvCol,1,true/false
 ShowAbvImg,0,true/false
 ShowKegCol,0,"false, not used"
-ShowBeerLabel,0,true/false
 UseHighResolution,0,"false, not used"
-LogoUrl,_Label.jpg,in usr folder
+LogoUrl,default_Logo.jpg,in usr folder
 HeaderText,On Tap @ Home,
 HeaderTextTruncLen,1,
 NumberOfTaps,4,
@@ -15,5 +15,5 @@ UseFlowMeter,0,"false, not used"
 UseColorsXML,1,"1 = colors.xml, 0 = function"
 HeaderBacklinkText,1,
 WebsiteUrl,https://MyWebsite.com,
-beersurl,beers.csv,
+beersurl,beers.csv,in usr folder
 StyleSheet,style_org.css,
