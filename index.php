@@ -99,7 +99,7 @@
 		$newArr  = json_decode($con, true); 
 		//print_r($newArr); 
 		// Array ( [COLOR] => Array ( [0] => Array ( [SRM] => 0.1 [RGB] => 248,248,230 ) [1] => Array ( [SRM] => 0.2 [RGB] => 248,248,220 ) [2] => Array ( [SRM] => 0.3 [RGB] => 247,247,199 ) [3] => Array ( [SRM] => 0.4 [RGB] => 244,249,185 ) [4] => Array ( [SRM] => 0.5 [RGB] => 247,249,180 ) [5] => Array ( [SRM] => 0.6 [RGB] => 248,249,178 ) [6] => Array ( [SRM] => 0.7 [RGB] => 244,246,169 ) [7] => Array ( [SRM] => 0.8 [RGB] => 245,247,166 ) 
-		foreach ($newArr [COLOR] as $value){
+		foreach ($newArr ['COLOR'] as $value){
 		 //echo $value["SRM"];
 		 $SRMlookup[$value["SRM"]] = $value["RGB"] ;
 		 //echo "SRM: ".$value["SRM"]."    RGB:  ".$SRMlookup[$value["SRM"]]." \n";
