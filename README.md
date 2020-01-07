@@ -33,7 +33,8 @@ https://github.com/RaspberryPints
 Inspired by the simplisity of Kegerface:
 http://github.com/kegerface/kegerface
 
-__Setup__
+__Setup__:
+
 Copy the files in the 'example' folder to the 'usr' folder.  This will product a working Simply Pints System.  Modify the config.csv and beers.csv as desired. 
 
 __Known Bugs:__
