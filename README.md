@@ -33,6 +33,11 @@ https://github.com/RaspberryPints
 Inspired by the simplisity of Kegerface:
 http://github.com/kegerface/kegerface
 
+__Requires__:
+
+- PHP
+- webserver (i.e. apache)
+
 __Setup__:
 
 Copy the files in the 'example' folder to the 'usr' folder.  This will product a working Simply Pints System.  Modify the config.csv and beers.csv as desired. 
@@ -46,6 +51,10 @@ __Known Bugs:__
 __Version History:__
 
 
-	
-	v.01.0 (beta release):
+	version 02.0
+		- Added logos
+		- added examples folder and setup instructions in readme
+		- added better beer color function (lookup vs algorithm)
+		
+	version 01.0 (beta release):
 		- Initial working version
